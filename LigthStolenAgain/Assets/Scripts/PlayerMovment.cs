@@ -9,25 +9,27 @@ public class PlayerMovment : MonoBehaviour
     public  float jumpForce = 30f;
     private bool isFacingRigth = true;
     public bool groundCheck = false;
+    private bool isDead = false;
+
     
     [SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private CircleCollider2D circleCollider;
-    
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject character;
     void Start()
     {
-        
+        animator = GetComponent<Animator>();    
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
         
+
     }
     private void FixedUpdate()
     {
-       
-        rigidbody.velocity = new Vector2(horizontal * speed, rigidbody.velocity.y);
+        WallingLogic();
         Flip();
         JumpLogic();
     }
@@ -35,7 +37,6 @@ public class PlayerMovment : MonoBehaviour
     {
         if(isFacingRigth && horizontal <0f || !isFacingRigth && horizontal > 0f)
         {
-            
             Vector3 localScale = gameObject.transform.localScale;
             localScale.x *= -1;
             gameObject.transform.localScale = localScale;
@@ -50,12 +51,32 @@ public class PlayerMovment : MonoBehaviour
             {
                 rigidbody.AddForce(Vector2.up * jumpForce);
             }
-
         }
+    }
+    private void WallingLogic()
+    {
+        if(isDead == false)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            if (horizontal == 1 || horizontal == -1)
+            {
+                animator.SetBool("IsWalk", true);
+            }
+            else
+            {
+                animator.SetBool("IsWalk", false);
+            }
+
+
+            rigidbody.velocity = new Vector2(horizontal * speed, rigidbody.velocity.y);
+        }
+       
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IsGroundUpdate(collision, true);
+        IsDead(collision, true);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -67,6 +88,21 @@ public class PlayerMovment : MonoBehaviour
         {
             groundCheck = value;
         }
+    }
+    private void IsDead(Collision2D collision2D,bool value)
+    {
+
+        if(collision2D.gameObject.tag == "Trap")
+        {
+            if(value == true)
+            {
+                animator.SetBool("IsDead", true);
+                Destroy(character, 2f);
+                isDead = true;
+            }
+            
+        }
+        
     }
    
 }
