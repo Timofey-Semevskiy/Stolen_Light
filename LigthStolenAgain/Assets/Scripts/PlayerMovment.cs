@@ -6,15 +6,15 @@ public class PlayerMovment : MonoBehaviour
 {
     private float speed = 1f;
     private float horizontal;
-    public  float jumpForce = 30f;
+    private  float jumpForce = 1100f;
     private bool isFacingRigth = true;
     public bool groundCheck = false;
     private bool isDead = false;
+    public bool haveFlashLigth = false;
 
-    
     [SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private CircleCollider2D circleCollider;
-    [SerializeField] private Animator animator;
+    [SerializeField] public Animator animator;
     [SerializeField] private GameObject character;
     void Start()
     {
@@ -32,6 +32,7 @@ public class PlayerMovment : MonoBehaviour
         WallingLogic();
         Flip();
         JumpLogic();
+        WalkFlash();
     }
     private void Flip()
     {
@@ -72,6 +73,17 @@ public class PlayerMovment : MonoBehaviour
         }
        
 
+    }
+    private void WalkFlash()
+    {
+        if (Input.GetMouseButton(0) && haveFlashLigth == true)
+        {
+            animator.SetBool("IsWalkFlash", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalkFlash", false);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
