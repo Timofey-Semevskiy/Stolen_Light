@@ -1736,6 +1736,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3197120732784244908, guid: c8cd4274db71f0846a07db2fc55b71b3, type: 3}
   m_PrefabInstance: {fileID: 1027225751}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1027289418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027289419}
+  m_Layer: 0
+  m_Name: FlashLigthInHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1027289419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027289418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.11, y: -0.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1309403045}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1145264687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,10 +2269,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309403038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.095, y: -0.052, z: 0}
+  m_LocalPosition: {x: -1.202, y: -0.039, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.726}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1027289419}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2257,8 +2289,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82837e34595112a408b437bbe49ab7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1309403038}
   flashLigth: {fileID: 2114406394}
   player: {fileID: 1309403040}
+  flashInHandPlayer: {fileID: 1027289418}
+  radius: 0.5
+  angTresh: 0.977
 --- !u!1 &1453635109
 GameObject:
   m_ObjectHideFlags: 0
@@ -3630,7 +3666,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f58e714960c41984caa1d1bf461e2209, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3649,9 +3685,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114406394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.856, y: -0.13168588, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.70000005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
