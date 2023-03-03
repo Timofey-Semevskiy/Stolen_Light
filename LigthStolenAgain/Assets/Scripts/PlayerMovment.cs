@@ -11,30 +11,28 @@ public class PlayerMovment : MonoBehaviour
     public bool groundCheck = false;
     private bool isDead = false;
     public bool haveFlashLigth = false;
+    public bool clickMouse = false;
 
     [SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private CircleCollider2D circleCollider;
     [SerializeField] public Animator animator;
     [SerializeField] private GameObject character;
-    void Start()
+    [SerializeField] private GameObject flashLigth;
+    [SerializeField] private GameObject flashRigth;
+    void Awake()
     {
         animator = GetComponent<Animator>();    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
     private void FixedUpdate()
     {
         WallingLogic();
         Flip();
         JumpLogic();
         WalkFlash();
+        LigthOn();
     }
-    private void Flip()
+    public void Flip()
     {
         if(isFacingRigth && horizontal <0f || !isFacingRigth && horizontal > 0f)
         {
@@ -79,16 +77,38 @@ public class PlayerMovment : MonoBehaviour
         if (Input.GetMouseButton(0) && haveFlashLigth == true)
         {
             animator.SetBool("IsWalkFlash", true);
+            clickMouse = true;
         }
         else
         {
             animator.SetBool("IsWalkFlash", false);
+            clickMouse = false;
+        }
+    }
+    private void LigthOn()
+    {
+        if (clickMouse == true)
+        {
+            flashRigth.SetActive(true);
+        }
+        else
+        {
+            flashRigth.SetActive(false);
+        }
+    }
+    private void PickUp(Collision2D collision2D)
+    {
+        if (collision2D.gameObject.tag == "Flashlight")
+        {
+            Destroy(flashLigth);
+            haveFlashLigth = true;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IsGroundUpdate(collision, true);
         IsDead(collision, true);
+        PickUp(collision);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
