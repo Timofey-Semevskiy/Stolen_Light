@@ -5,6 +5,7 @@ using UnityEngine;
 public class BoxLogic : MonoBehaviour
 {
     public GameObject boxPrefab;
+    public GameObject visibalBoxPrefab;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class BoxLogic : MonoBehaviour
        if(collision.gameObject.tag == "Flashlight")
         {
             Destroy(boxPrefab);
+            Instantiate(visibalBoxPrefab,boxPrefab.transform.position,Quaternion.identity);
+            
         }
     }
 }
