@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6785531065060632424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.45410538, y: -0.33574885, z: -0.09483513}
-  m_LocalScale: {x: 1.075, y: 1, z: 0}
+  m_LocalScale: {x: 0.99, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -147,4 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 6785531065060632424}
-  visibalBoxPrefab: {fileID: 473729864613539408, guid: dff286938ebda634ba153d36213c6242, type: 3}
+  visibalBoxPrefab: {fileID: 7885052633835843662, guid: dff286938ebda634ba153d36213c6242, type: 3}

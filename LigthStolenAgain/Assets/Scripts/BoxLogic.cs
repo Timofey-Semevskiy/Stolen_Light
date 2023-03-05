@@ -6,6 +6,7 @@ public class BoxLogic : MonoBehaviour
 {
     public GameObject boxPrefab;
     public GameObject visibalBoxPrefab;
+
     
     // Start is called before the first frame update
     void Start()
@@ -28,4 +29,7 @@ public class BoxLogic : MonoBehaviour
             
         }
     }
+
+
+   
 }
