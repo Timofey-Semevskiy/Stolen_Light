@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6459307246339626892}
   - component: {fileID: 3529899302034532131}
   - component: {fileID: 53083199616823653}
-  - component: {fileID: 4652016741276615311}
+  - component: {fileID: 4652016741276615312}
   m_Layer: 0
   m_Name: InvisableBLock
   m_TagString: Box
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4652016741276615311
+--- !u!114 &4652016741276615312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 6785531065060632424}
   visibalBoxPrefab: {fileID: 7885052633835843662, guid: dff286938ebda634ba153d36213c6242, type: 3}
+  reternBack: {fileID: 2140619072464755264, guid: dff286938ebda634ba153d36213c6242, type: 3}

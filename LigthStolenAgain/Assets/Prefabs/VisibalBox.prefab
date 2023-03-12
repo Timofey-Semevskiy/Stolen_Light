@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4616862878684172974}
   - component: {fileID: 8028063162720453625}
   - component: {fileID: 3114732126691580598}
-  - component: {fileID: 7885052633835843657}
+  - component: {fileID: 2140619072464755264}
   m_Layer: 0
   m_Name: VisibalBox
   m_TagString: Ground
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: aeb5d8962cb236844b03e8f31d2d0f2c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24, y: 0.06}
   m_EdgeRadius: 0
---- !u!114 &7885052633835843657
+--- !u!114 &2140619072464755264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 6785531065060632424, guid: e2c5e17dbe884bf41a411e4eecfd31b9, type: 3}
   visibalBoxPrefab: {fileID: 7885052633835843662}
+  _visibalBoxPrefabSpawned: 0

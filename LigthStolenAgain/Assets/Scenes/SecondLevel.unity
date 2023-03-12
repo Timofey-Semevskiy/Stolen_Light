@@ -904,6 +904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxPrefab: {fileID: 0}
   visibalBoxPrefab: {fileID: 0}
+  reternBack: {fileID: 0}
 --- !u!1 &399329895
 GameObject:
   m_ObjectHideFlags: 0
